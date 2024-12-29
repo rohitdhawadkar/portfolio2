@@ -1,77 +1,64 @@
 import React from "react";
-import {
-  Avatar,
-  Button,
-  Card,
-  CardBody,
-  CardHeader,
-  Typography,
-} from "@material-tailwind/react";
-
 import Saitama from "../assets/Saitama.jpg";
+
 function UserProfile1() {
   return (
     <section className="container mx-auto px-8 py-10">
-      <Card shadow={false} className="border border-gray-300 rounded-2xl">
-        <CardHeader shadow={false} className="h-60 !rounded-lg">
+      <div className="border border-gray-300 rounded-2xl shadow-md">
+        {/* Header Section */}
+        <div className="h-60 rounded-lg overflow-hidden">
           <img
             src="https://www.material-tailwind.com/img/content2.jpg"
             alt="dark"
-            height={1024}
-            width={1024}
-            className="w-full h-full object-center"
+            className="w-full h-full object-cover"
           />
-        </CardHeader>
-        <CardBody>
-          <div className="flex lg:gap-0 gap-6 flex-wrap justify-between items-center">
-            <div className="flex items-center gap-3">
-              <Avatar src={Saitama} alt="avatar" variant="rounded" />
+        </div>
+
+        {/* Body Section */}
+        <div className="p-6">
+          <div className="flex flex-wrap justify-between items-center gap-6">
+            {/* Profile Info */}
+            <div className="flex items-center gap-4">
+              <img
+                src={Saitama}
+                alt="avatar"
+                className="w-16 h-16 rounded-lg object-cover"
+              />
               <div>
-                <Typography color="blue-gray" variant="h6">
+                <h6 className="text-blue-gray-800 text-lg font-semibold">
                   Rohit Dhawadkar
-                </Typography>
-                <Typography
-                  variant="small"
-                  className="font-normal text-gray-600"
-                >
+                </h6>
+                <p className="text-gray-600 text-sm">
                   rohit.dhawadkar@gmail.com
-                </Typography>
+                </p>
               </div>
             </div>
+
+            {/* Buttons */}
             <div className="flex flex-wrap items-center gap-2">
-              <Button
-                variant="outlined"
-                className="border-gray-300 flex items-center gap-2"
-              >
+              <button className="border border-gray-300 px-4 py-2 rounded-lg flex items-center gap-2 hover:shadow">
                 <i className="fa fa-github text-base" />
                 Github
-              </Button>
-              <Button
-                variant="outlined"
-                className="border-gray-300 flex items-center gap-2"
-              >
+              </button>
+              <button className="border border-gray-300 px-4 py-2 rounded-lg flex items-center gap-2 hover:shadow">
                 <i className="fa-brands fa-twitter" />
                 Twitter
-              </Button>
-              <Button
-                variant="outlined"
-                className="border-gray-300 flex items-center gap-2"
-              >
+              </button>
+              <button className="border border-gray-300 px-4 py-2 rounded-lg flex items-center gap-2 hover:shadow">
                 <i className="fa-brands fa-medium" />
                 Medium
-              </Button>
+              </button>
             </div>
           </div>
-          <Typography
-            variant="small"
-            className="font-normal text-gray-600 mt-6"
-          >
+
+          {/* Description */}
+          <p className="text-gray-600 text-sm mt-6">
             Passionate UI/UX designer focused on creating intuitive and engaging
             digital experiences. <br /> Driven by design thinking, creativity,
             and a love for problem-solving.
-          </Typography>
-        </CardBody>
-      </Card>
+          </p>
+        </div>
+      </div>
     </section>
   );
 }

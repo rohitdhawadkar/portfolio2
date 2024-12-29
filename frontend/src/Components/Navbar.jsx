@@ -1,67 +1,40 @@
 import React from "react";
-import {
-  Navbar,
-  Collapse,
-  Typography,
-  IconButton,
-} from "@material-tailwind/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 function NavList() {
   return (
     <ul className="my-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-medium"
-      >
+      <li className="p-1 font-medium text-blue-gray-900">
         <a
           href="#"
           className="flex items-center hover:text-blue-500 transition-colors"
         >
           Pages
         </a>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-medium"
-      >
+      </li>
+      <li className="p-1 font-medium text-blue-gray-900">
         <a
           href="#"
           className="flex items-center hover:text-blue-500 transition-colors"
         >
           Account
         </a>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-medium"
-      >
+      </li>
+      <li className="p-1 font-medium text-blue-gray-900">
         <a
           href="#"
           className="flex items-center hover:text-blue-500 transition-colors"
         >
           Blocks
         </a>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-medium"
-      >
+      </li>
+      <li className="p-1 font-medium text-blue-gray-900">
         <a
           href="#"
           className="flex items-center hover:text-blue-500 transition-colors"
         >
           Docs
         </a>
-      </Typography>
+      </li>
     </ul>
   );
 }
@@ -69,47 +42,48 @@ function NavList() {
 export function NavbarSimple() {
   const [openNav, setOpenNav] = React.useState(false);
 
-  const handleWindowResize = () =>
-    window.innerWidth >= 960 && setOpenNav(false);
+  const handleWindowResize = () => {
+    if (window.innerWidth >= 960) {
+      setOpenNav(false);
+    }
+  };
 
   React.useEffect(() => {
     window.addEventListener("resize", handleWindowResize);
-
     return () => {
       window.removeEventListener("resize", handleWindowResize);
     };
   }, []);
 
   return (
-    <Navbar className="mx-auto max-w-screen-xl px-3 py-3">
+    <nav className="mx-auto max-w-screen-xl px-3 py-3 bg-white border-b border-gray-200">
       <div className="flex items-center justify-between text-blue-gray-900">
-        <Typography
-          as="a"
+        <a
           href="#"
-          variant="h6"
-          className="mr-4 cursor-pointer py-1.5"
+          className="mr-4 cursor-pointer py-1.5 text-lg font-semibold"
         >
-          Material Tailwind
-        </Typography>
+          Plain Tailwind
+        </a>
         <div className="hidden lg:block">
           <NavList />
         </div>
-        <IconButton
-          variant="text"
-          className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
-          ripple={false}
+        <button
+          className="ml-auto h-6 w-6 text-inherit lg:hidden"
           onClick={() => setOpenNav(!openNav)}
+          aria-label="Toggle navigation"
         >
           {openNav ? (
-            <XMarkIcon className="h-6 w-6" strokeWidth={2} />
+            <span className="text-2xl">X</span> // Use text or another icon here
           ) : (
-            <Bars3Icon className="h-6 w-6" strokeWidth={2} />
+            <span className="text-2xl">☰</span> // Use text or another icon here
           )}
-        </IconButton>
+        </button>
       </div>
-      <Collapse open={openNav}>
-        <NavList />
-      </Collapse>
-    </Navbar>
+      {openNav && (
+        <div className="lg:hidden">
+          <NavList />
+        </div>
+      )}
+    </nav>
   );
 }
