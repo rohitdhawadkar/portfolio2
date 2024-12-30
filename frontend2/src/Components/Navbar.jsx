@@ -62,7 +62,7 @@ export function NavbarSimple() {
           href="#"
           className="mr-4 cursor-pointer py-1.5 text-lg font-semibold"
         >
-          Plain Tailwind
+          Portfolio
         </a>
         <div className="hidden lg:block">
           <NavList />
