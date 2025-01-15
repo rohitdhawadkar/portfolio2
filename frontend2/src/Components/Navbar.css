@@ -1,0 +1,79 @@
+/* Apply a CSS reset */
+
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: "Lexend Deca", sans-serif; /* Apply Lexend Deca to the body */
+    font-size: 16px; /* Base font size for accessibility */
+    line-height: 1.5; /* Better line height for readability */
+    background-color: #f4f4f4; /* Set a light background color */
+}
+
+/* Specific font for your navbar */
+.Navbar {
+    background-color: black;
+    padding: 0 25px; /* Add horizontal padding to avoid expanding height */
+    height: 60px; /* Set a fixed height for the navbar */
+    display: flex;
+    justify-content: space-between; /* Space between the brand and links */
+    align-items: center; /* Vertically center the content */
+}
+
+.Navbar-Name {
+    display: flex;
+    align-items: center; /* Vertically center name and logo */
+}
+
+.My-name {
+    color: white;
+    font-size: 24px;
+    font-family: "Roboto", sans-serif; /* Apply Roboto font specifically to name */
+    margin-left: 10px; /* Space between the logo and the name */
+}
+
+.Navbar-Links {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end; /* Align items to the right */
+    padding: 0;
+    margin: 0;
+}
+
+.Navbar-Links li {
+    margin: 0 20px;
+}
+
+.Navbar-Links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: "Roboto", sans-serif; /* Apply Roboto font to links */
+    display: flex; /* Ensure both the icon and text are displayed side by side */
+    align-items: center; /* Vertically center the icon and text */
+}
+
+.Navbar-Links a:hover {
+    color: #ddd;
+}
+
+.size-6 {
+    width: 24px; /* Ensure the icon size is set */
+    height: 24px; /* Ensure the icon size is set */
+    margin-right: 8px; /* Space between the icon and the text */
+}
+
+.size-7 {
+    width: 32px; /* Smaller icon size */
+    height: 32px; /* Smaller icon size */
+    margin-right: 10px;
+    /* Space between the icon and the text */
+    color: white;
+}
