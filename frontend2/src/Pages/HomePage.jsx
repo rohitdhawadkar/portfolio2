@@ -1,9 +1,9 @@
-import UserProfile1 from "../Components/profile";
+import Login from "../Components/Login";
 
 export const HomePage = () => {
   return (
     <>
-      <UserProfile1 />
+      <Login />
     </>
   );
 };
