@@ -1,79 +1,115 @@
-/* Apply a CSS reset */
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;600&family=Roboto:wght@400;500&display=swap");
 
-@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.navbar {
+    background: linear-gradient(to right, #1a1a1a, #2d2d2d);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
-html,
-body {
-    font-family: "Lexend Deca", sans-serif; /* Apply Lexend Deca to the body */
-    font-size: 16px; /* Base font size for accessibility */
-    line-height: 1.5; /* Better line height for readability */
-    background-color: #f4f4f4; /* Set a light background color */
-}
-
-/* Specific font for your navbar */
-.Navbar {
-    background-color: black;
-    padding: 0 25px; /* Add horizontal padding to avoid expanding height */
-    height: 60px; /* Set a fixed height for the navbar */
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.8rem 2rem;
     display: flex;
-    justify-content: space-between; /* Space between the brand and links */
-    align-items: center; /* Vertically center the content */
+    justify-content: space-between;
+    align-items: center;
 }
 
-.Navbar-Name {
+.navbar-brand {
     display: flex;
-    align-items: center; /* Vertically center name and logo */
+    align-items: center;
+    gap: 0.8rem;
 }
 
-.My-name {
+.brand-name {
     color: white;
-    font-size: 24px;
-    font-family: "Lexend Deca", sans-serif; /* Apply Roboto font specifically to name */
-    margin-left: 10px; /* Space between the logo and the name */
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
-.Navbar-Links {
+.nav-links {
+    display: flex;
+    gap: 2rem;
     list-style: none;
-    display: flex;
-    justify-content: flex-end; /* Align items to the right */
-    padding: 0;
-    margin: 0;
 }
 
-.Navbar-Links li {
-    margin: 0 20px;
-}
-
-.Navbar-Links a {
-    color: white;
+.nav-item a {
+    color: #ffffff;
     text-decoration: none;
-    font-size: 18px;
-    font-family: "Roboto", sans-serif; /* Apply Roboto font to links */
-    display: flex; /* Ensure both the icon and text are displayed side by side */
-    align-items: center; /* Vertically center the icon and text */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.8rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
 }
 
-.Navbar-Links a:hover {
-    color: #ddd;
+.nav-item a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
 }
 
-.size-6 {
-    width: 24px; /* Ensure the icon size is set */
-    height: 24px; /* Ensure the icon size is set */
-    margin-right: 8px; /* Space between the icon and the text */
+.nav-item svg {
+    width: 1.2rem;
+    height: 1.2rem;
+    transition: transform 0.3s ease;
 }
 
-.size-7 {
-    width: 32px; /* Smaller icon size */
-    height: 32px; /* Smaller icon size */
-    margin-right: 10px;
-    /* Space between the icon and the text */
-    color: white;
+.nav-item:hover svg {
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar-container {
+        padding: 0.8rem 1rem;
+    }
+
+    .brand-name {
+        font-size: 1.2rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .nav-item a span {
+        display: none;
+    }
+
+    .nav-item a {
+        padding: 0.5rem;
+    }
+
+    .nav-item svg {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+}
+
+/* Optional: Add a subtle animation when the navbar appears */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.navbar {
+    animation: slideDown 0.3s ease-out;
+}
+
+/* Optional: Add an active state for the current page */
+.nav-item a.active {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
 }

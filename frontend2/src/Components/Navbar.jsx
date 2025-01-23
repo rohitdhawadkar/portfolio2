@@ -2,40 +2,41 @@ import "./Navbar.css";
 
 const Navbar = () => {
   return (
-    <div>
-      <div className="Navbar">
-        <div className="Navbar-Name">
+    <nav className="navbar">
+      <div className="navbar-container">
+        <div className="navbar-brand">
           <NameIcon />
-          <span className="My-name">Rohit Dhawadkar</span>
+          <span className="brand-name">Rohit Dhawadkar</span>
         </div>
-        <ul className="Navbar-Links">
-          <li>
+
+        <ul className="nav-links">
+          <li className="nav-item">
             <a href="#home">
               <HomeIcon />
-              Home
+              <span>Home</span>
             </a>
           </li>
-          <li>
+          <li className="nav-item">
             <a href="#About">
               <AboutIcon />
-              About
+              <span>About</span>
             </a>
           </li>
-          <li>
+          <li className="nav-item">
             <a href="#Projects">
               <ProjectIcon />
-              Projects
+              <span>Projects</span>
             </a>
           </li>
-          <li>
+          <li className="nav-item">
             <a href="#Blogs">
               <BlogIcon />
-              Blogs
+              <span>Blogs</span>
             </a>
           </li>
         </ul>
       </div>
-    </div>
+    </nav>
   );
 };
 
